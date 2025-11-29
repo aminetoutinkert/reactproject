@@ -1,68 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Custom Morocco-themed styles */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --morocco-green: #009639;
+  --morocco-red: #C1272D;
+  --morocco-brown: #8B4513;
+  --morocco-gold: #FFD700;
+  --morocco-cream: #F5F5DC;
+  --coffee-brown: #D2B48C;
+  --coffee-light: #F4E4BC;
+  --coffee-dark: #8B7355;
+  --cream: #FFF8DC;
+  --soft-brown: #8B4513;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+::-webkit-scrollbar-track {
+  background-color: var(--coffee-light);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+::-webkit-scrollbar-thumb {
+  background-color: var(--coffee-brown);
+  border-radius: 4px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--coffee-dark);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Custom utilities */
+.text-shadow {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.gradient-morocco {
+  background: linear-gradient(135deg, var(--morocco-green) 0%, var(--morocco-red) 50%, var(--morocco-gold) 100%);
+}
+
+.gradient-coffee {
+  background: linear-gradient(135deg, var(--coffee-brown) 0%, var(--coffee-light) 50%, var(--soft-brown) 100%);
+}
+
+.gradient-cream {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--coffee-light) 100%);
+}
+
+/* Morocco colors */
+.bg-morocco-green {
+  background-color: var(--morocco-green) !important;
+}
+
+.bg-morocco-red {
+  background-color: var(--morocco-red) !important;
+}
+
+.bg-morocco-brown {
+  background-color: var(--morocco-brown) !important;
+}
+
+.text-morocco-green {
+  color: var(--morocco-green) !important;
+}
+
+.text-morocco-red {
+  color: var(--morocco-red) !important;
+}
+
+.text-morocco-brown {
+  color: var(--morocco-brown) !important;
+}
+
+/* Coffee colors */
+.bg-coffee-brown {
+  background-color: var(--coffee-brown) !important;
+}
+
+.bg-coffee-light {
+  background-color: var(--coffee-light) !important;
+}
+
+.bg-coffee-dark {
+  background-color: var(--coffee-dark) !important;
+}
+
+.bg-cream {
+  background-color: var(--cream) !important;
+}
+
+.bg-soft-brown {
+  background-color: var(--soft-brown) !important;
+}
+
+.text-coffee-brown {
+  color: var(--coffee-brown) !important;
+}
+
+.text-coffee-dark {
+  color: var(--coffee-dark) !important;
+}
+
+.text-cream {
+  color: var(--cream) !important;
+}
+
+/* Morocco Football Theme */
+.morocco-flag-gradient {
+  background: linear-gradient(45deg, #C1272D 33%, #009639 33%, #009639 66%, #C1272D 66%);
+}
+
+.atlas-lions-bg {
+  background: linear-gradient(135deg, #009639 0%, #FFD700 50%, #C1272D 100%);
+}
+
+.cafe-el-massira-bg {
+  background: linear-gradient(135deg, #8B4513 0%, #009639 50%, #C1272D 100%);
+}
+
+/* Football Elements */
+.football-bounce {
+  animation: footballBounce 2s infinite ease-in-out;
+}
+
+@keyframes footballBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Star Pattern Animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star-twinkle {
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
   }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom Bootstrap overrides */
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-morocco-green {
+  background-color: var(--morocco-green);
+  border-color: var(--morocco-green);
+  color: white;
+}
+
+.btn-morocco-green:hover {
+  background-color: #007a2d;
+  border-color: #007a2d;
+  color: white;
+}
+
+.btn-morocco-red {
+  background-color: var(--morocco-red);
+  border-color: var(--morocco-red);
+  color: white;
+}
+
+.btn-morocco-red:hover {
+  background-color: #a71d23;
+  border-color: #a71d23;
+  color: white;
+}
+
+.btn-coffee-brown {
+  background-color: var(--coffee-light);
+  border-color: var(--coffee-brown);
+  color: var(--coffee-dark);
+}
+
+.btn-coffee-brown:hover {
+  background-color: var(--coffee-brown);
+  border-color: var(--coffee-dark);
+  color: white;
 }
